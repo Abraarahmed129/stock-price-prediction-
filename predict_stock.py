@@ -152,12 +152,7 @@ else:
     print("Could not make a prediction due to insufficient historical data for rolling averages.")
 
 
-# -- 11. VISUALIZING THE BACKTEST RESULTS --
 
-# It's helpful to see the predictions plotted against the actual prices.
-
-# First, let's combine our final predictions with the main S&P 500 data.
-# We will use .join() which is a clean way to merge based on the index (Date).
 plot_data = sp500.join(final_predictions["Predictions"]).dropna()
 
 # --- PLOT 1: TRADING SIGNALS ON PRICE CHART ---
@@ -201,7 +196,6 @@ plot_data['total_predictions'] = range(1, len(plot_data) + 1)
 # We calculate the rolling accuracy
 plot_data['rolling_accuracy'] = plot_data['correct_predictions'] / plot_data['total_predictions']
 
-# Create the plot
 plt.figure(figsize=(16, 8))
 plt.plot(plot_data['rolling_accuracy'], label='Model Cumulative Accuracy', color='orange')
 
