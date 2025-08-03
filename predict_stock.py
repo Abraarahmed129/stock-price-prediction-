@@ -206,7 +206,6 @@ plt.ylabel('Accuracy', fontsize=16)
 plt.legend(loc='upper left', fontsize=12)
 plt.grid(True)
 
-# Add a horizontal line at 50% for reference (better than random guessing)
 plt.axhline(y=0.5, color='r', linestyle='--', label='50% Accuracy (Random Guess)')
 
 print("\nDisplaying plot of cumulative accuracy. Close the plot window to finish the script.")
